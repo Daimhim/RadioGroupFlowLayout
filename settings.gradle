@@ -8,4 +8,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "RadioGroupFlowLayout"
 include ':app'
-include ':RadioGroupFlowLayout'
+include ':RGFL'
