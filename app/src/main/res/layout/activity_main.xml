@@ -7,46 +7,39 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         tools:context="org.daimhim.demo.MainActivity">
-    <Switch
-            android:textOff="单选"
-            android:textOn="多选"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-        <org.daimhim.widget.rgfl.RadioGroupFlowLayout
+    <org.daimhim.widget.rgfl.RadioGroupFlowLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <CheckBox
+                android:text="测试 CheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        <Switch
+                android:text="测试 Switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        <RadioButton
+                android:text="测试 RadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
             <CheckBox
-                    android:text="测试 CheckBox"
+                    android:text="嵌套测试 CheckBox"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
             <Switch
-                    android:text="测试 Switch"
+                    android:text="嵌套测试 Switch"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
             <RadioButton
-                    android:text="测试 RadioButton"
+                    android:text="嵌套测试 RadioButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
-            <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                <CheckBox
-                        android:text="嵌套测试 CheckBox"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-                <Switch
-                        android:text="嵌套测试 Switch"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-                <RadioButton
-                        android:text="嵌套测试 RadioButton"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-            </LinearLayout>
-        </org.daimhim.widget.rgfl.RadioGroupFlowLayout>
-
-
+        </LinearLayout>
+    </org.daimhim.widget.rgfl.RadioGroupFlowLayout>
 </LinearLayout>
