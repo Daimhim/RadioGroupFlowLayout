@@ -20,3 +20,7 @@ dependencies {
 
 ###### 2. 使用
 ![image](20220509155605.png)
+
+
+###### 详细文档或者后续更新都会在下面链接
+[RadioGroupFlowLayout](http://note.youdao.com/noteshare?id=8624ff958de76d101b80e2463be678c0&sub=23998F4C67D049008788EC08C9F8CA67)
