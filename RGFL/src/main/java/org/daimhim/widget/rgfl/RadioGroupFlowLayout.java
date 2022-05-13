@@ -14,6 +14,8 @@ import android.widget.CompoundButton;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 
+import java.util.LinkedList;
+
 /**
  *
  * ━━━━━━神兽出没━━━━━━
@@ -160,6 +162,11 @@ public class RadioGroupFlowLayout extends LinearLayout {
             }
         }
     }
+    private void setCheckedStateForView(View checkedView, boolean checked) {
+        if (checkedView instanceof CompoundButton) {
+            ((CompoundButton) checkedView).setChecked(checked);
+        }
+    }
 
     private void setChildAttribute(boolean isChild,View child) {
         int id = child.getId();
@@ -235,9 +242,29 @@ public class RadioGroupFlowLayout extends LinearLayout {
 
 
     public void clearCheck() {
-        check(-1);
+        if (!mRadioOrMultipleChoice){
+            // 单选
+            if (mCheckedId != -1) {
+                setCheckedStateForView(findViewById(mCheckedId), false);
+            }
+        }else {
+            // 多选
+            LinkedList<View> viewDeque = new LinkedList<View>();
+            View view = this;
+            viewDeque.push(view);
+            while (!viewDeque.isEmpty()){
+                view = viewDeque.pop();
+                if(view instanceof ViewGroup){
+                    for (int i = 0; i < ((ViewGroup) view).getChildCount(); i++) {
+                        View childAt = ((ViewGroup) view).getChildAt(i);
+                        viewDeque.push(childAt);
+                    }
+                }else {
+                    setCheckedStateForView(view,false);
+                }
+            }
+        }
     }
-
 
     public void setOnCheckedChangeListener(OnCheckedChangeListener listener) {
         mOnCheckedChangeListener = listener;
